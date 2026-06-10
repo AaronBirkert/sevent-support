@@ -1,5 +1,7 @@
 /* sEvent Support – shared styles */
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap');
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -7,16 +9,17 @@
 }
 
 :root {
-  --color-primary: #5b4fcf;
-  --color-primary-dark: #3d33a8;
-  --color-bg: #f8f8fc;
+  --color-primary: #6c47ff;
+  --color-primary-dark: #4b2fe0;
+  --color-accent: #ff6b6b;
+  --color-bg: #f0eeff;
   --color-surface: #ffffff;
-  --color-text: #1a1a2e;
-  --color-text-muted: #6b6b8a;
-  --color-border: #e2e2ef;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --radius: 10px;
-  --shadow: 0 2px 12px rgba(91, 79, 207, 0.08);
+  --color-text: #12112a;
+  --color-text-muted: #5c5a7a;
+  --color-border: #d8d4f5;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(108, 71, 255, 0.12);
 }
 
 body {
@@ -31,9 +34,10 @@ body {
 
 /* ── Header ─────────────────────────────────────────── */
 header {
-  background: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: #fff;
   padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(108, 71, 255, 0.25);
 }
 
 header .header-inner {
@@ -52,6 +56,12 @@ header .logo {
   letter-spacing: -0.02em;
 }
 
+header .logo::before {
+  content: "✦ ";
+  font-size: 0.9em;
+  opacity: 0.75;
+}
+
 header nav {
   margin-left: auto;
 }
@@ -60,12 +70,16 @@ header nav a {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   font-size: 0.9rem;
+  font-weight: 500;
   margin-left: 1.25rem;
-  transition: color 0.15s;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
 }
 
 header nav a:hover {
   color: #fff;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* ── Main content ────────────────────────────────────── */
@@ -84,6 +98,16 @@ main {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 2rem 2.25rem;
+}
+
+.card a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.card a:hover {
+  text-decoration: underline;
 }
 
 /* ── Typography ──────────────────────────────────────── */
@@ -137,9 +161,10 @@ main {
   border-left: 4px solid var(--color-primary);
   border-radius: 0 var(--radius) var(--radius) 0;
   padding: 0.9rem 1.1rem;
-  margin: 1.25rem 0;
+  margin: 1.5rem 0;
   font-size: 0.92rem;
   color: var(--color-primary-dark);
+  font-weight: 500;
 }
 
 /* ── Button ──────────────────────────────────────────── */
